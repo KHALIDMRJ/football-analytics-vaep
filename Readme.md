@@ -7,6 +7,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![OOP](https://img.shields.io/badge/Paradigm-OOP-FF6B35?style=for-the-badge&logo=databricks&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-00C851?style=for-the-badge&logo=checkmarx&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-4%20fichiers-27AE60?style=for-the-badge&logo=pytest&logoColor=white)
 ![License](https://img.shields.io/badge/License-Academic-9B59B6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 ![Data](https://img.shields.io/badge/Data-StatsBomb-E74C3C?style=for-the-badge&logo=databricks&logoColor=white)
 
@@ -245,7 +246,7 @@ projet_foot/
 ## 📁 Structure du projet
 
 ```
-football-analytics-vaep/
+mini-project-propre/
 │
 ├── 📄 README.md                  ← Ce fichier
 ├── 📊 fus_FAR.csv                ← Données match FUS Rabat (StatsBomb)
@@ -255,7 +256,12 @@ football-analytics-vaep/
 ├── 🐍 action.py                  ← Action + Passe, Tir, Dribble (héritage)
 ├── 🐍 possession.py              ← Classe Possession (VAEP, xG)
 ├── 🐍 match.py                   ← Classe Match (charge CSV, analyse)
-└── 🐍 main.py                    ← Point d'entrée principal
+├── 🐍 main.py                    ← Point d'entrée principal
+│
+├── 🧪 test_balle.py              ← Tests unitaires classe Balle
+├── 🧪 test_joueur.py             ← Tests unitaires classe Joueur
+├── 🧪 test_action.py             ← Tests unitaires Passe, Tir, Dribble
+└── 🧪 test_possession.py         ← Tests unitaires classe Possession
 ```
 
 ---
@@ -322,6 +328,8 @@ python test_joueur.py      # Test classe Joueur
 python test_action.py      # Test Passe, Tir, Dribble
 python test_possession.py  # Test Possession + VAEP
 ```
+
+> ✅ Tous les tests doivent s'exécuter **sans erreur et sans warning**
 
 ---
 
@@ -413,16 +421,42 @@ Le projet répond aux exigences suivantes :
 
 ---
 
-## 👥 Auteurs
+## 🧪 Fichiers de tests
+
+Chaque classe principale a son fichier de test dédié :
+
+| Fichier | Classe testée | Ce qui est vérifié |
+|---------|--------------|-------------------|
+| `test_balle.py` | `Balle` | Position, zone dangereuse, encapsulation |
+| `test_joueur.py` | `Joueur` | Création, liste actions vide, VAEP=0 |
+| `test_action.py` | `Passe`, `Tir`, `Dribble` | Héritage, polymorphisme, distance au but |
+| `test_possession.py` | `Possession` | VAEP total, xG, probabilités |
+
+### Lancer tous les tests
+
+```bash
+python test_balle.py
+python test_joueur.py
+python test_action.py
+python test_possession.py
+```
+
+**Résultat attendu pour chaque test :**
+```
+✅ 0 erreur   ✅ 0 warning   ✅ Résultats corrects affichés
+```
+
+---
+
+## 👤 Auteur
 
 | Nom | Établissement |
 |-----|---------------|
-| Étudiant(e) 1 | [Votre université] |
-| Étudiant(e) 2 | [Votre université] |
+| KHALID MORJAN | Faculté polydisciplinaire Khouribga -- SIIA |
 
 **Module** : Programmation Orientée Objet (POO)  
 **Année** : 2025–2026  
-**Encadrant** : [Nom du professeur]
+**Encadrant** : MOHAMED MOUJABIR
 
 ---
 
